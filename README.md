@@ -1,35 +1,10 @@
 # test-multi-app
 
-This template should help get you started developing with Vue 3 in Vite.
+* Vue 2.7.7
+* Vite 3.0.2
 
-## Recommended IDE Setup
+[Vite docs](https://vitejs.dev/guide/build.html#multi-page-app) suggest that the dev server will automatically resolve multi-page apps for you. 
+However, in this repo when you visit `/login` it loads up the root `index.html` file instead of `/login/index.html` so it attempts to load the main Vue app. 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+In my real app I have a separate login app and we do a real browser navigation instead of an in-app navigation because the server might end up redirecting to a different
+identity provider depending on configuration. So from the home page we have a `<a href='/login'></a>` tag. Clicking this link goes to `/login` but renders the root app instead of the login index page. 
