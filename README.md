@@ -8,3 +8,5 @@ However, in this repo when you visit `/login` it loads up the root `index.html` 
 
 In my real app I have a separate login app and we do a real browser navigation instead of an in-app navigation because the server might end up redirecting to a different
 identity provider depending on configuration. So from the home page we have a `<a href='/login'></a>` tag. Clicking this link goes to `/login` but renders the root app instead of the login index page. 
+
+Defining the entry points as rollup options makes the production build run correctly. It is just the dev server that doesn't recognize the route. 
