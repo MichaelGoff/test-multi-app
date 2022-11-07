@@ -1,12 +1,8 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
-Vue.use(VueRouter)
-
-const router = new VueRouter({
-  mode: 'history',
-  base: import.meta.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -22,8 +18,8 @@ const router = new VueRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '*',
-      name: 'notfound',
+      path: '/:pathMatch(.*)*',
+      name: 'not-found', 
       component: () => import('../views/NotFound.vue')
     }
   ]

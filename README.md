@@ -1,7 +1,7 @@
 # test-multi-app
 
-* Vue 2.7.7
-* Vite 3.0.2
+* Vue 3.2.41
+* Vite 3.1.8
 
 [Vite docs](https://vitejs.dev/guide/build.html#multi-page-app) suggest that the dev server will automatically resolve multi-page apps for you. 
 However, in this repo when you visit `/login` it loads up the root `index.html` file instead of `/login/index.html` so it attempts to load the main Vue app. 
